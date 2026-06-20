@@ -1,1 +1,81 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="10"><title>Dscapgen Agent</title></head><body><h1>Loading...</h1><p>Agent status page initializing.</p></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="10">
+<title>Dscapgen Agent</title>
+<style>
+* { box-sizing: border-box; }
+body { background: #0a0e14; color: #e6e9ef; font-family: 'Courier New', monospace; margin: 0; padding: 20px; max-width: 900px; margin: 0 auto; }
+h1 { color: #7fd0ff; font-size: 1.4em; margin-bottom: 5px; }
+.status-badge { display: inline-block; padding: 8px 16px; border-radius: 5px; font-weight: bold; font-size: 1.1em; background: #1a3a1a; color: #7fff5a; margin: 10px 0; }
+.meta { color: #666; font-size: 0.85em; margin: 3px 0; }
+.section { margin: 15px 0; padding: 12px; background: #0d1320; border: 1px solid #1a2235; border-radius: 5px; }
+.section h2 { color: #7fd0ff; font-size: 0.95em; margin: 0 0 8px 0; }
+.cmd { background: #111; padding: 4px 8px; margin: 2px 0; border-left: 3px solid #7fd0ff; font-size: 0.8em; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
+.output { background: #050; color: #7fdf5a; padding: 8px; font-size: 0.75em; overflow-x: auto; max-height: 350px; overflow-y: auto; border-radius: 3px; white-space: pre-wrap; word-wrap: break-word; }
+.history { font-size: 0.7em; color: #888; max-height: 250px; overflow-y: auto; white-space: pre-wrap; word-wrap: break-word; }
+.kill-btn { display: inline-block; background: #ff5a3b; color: #fff; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; font-weight: bold; text-decoration: none; margin: 10px 0; }
+.kill-btn:hover { background: #ff7a5b; }
+a { color: #7fd0ff; }
+</style>
+</head>
+<body>
+
+<h1>▶ Dscapgen Agent</h1>
+<div class="status-badge">RUNNING</div>
+<div class="meta">Turn: <b>7</b> | Updated: 20:09:16 UTC | Auto-refresh: 10s</div>
+<div class="meta">Kernel: 5.10.134 | CVE: 2023-32233 | Target: nf_tables escape</div>
+
+<div class="section">
+<h2>🔴 KILL SWITCH</h2>
+<p style="color: #ff5a3b; font-weight: bold;">⚠ This will immediately stop the agent.</p>
+<a href="https://github.com/Deq710sia/dscapgen-agent/new/main?filename=KILL&value=kill" class="kill-btn" target="_blank">⚠ KILL THE AGENT</a>
+<p class="meta">Or ask any agent session to run: <code style="color:#ff5a3b">touch /tmp/KILL_SWITCH</code></p>
+<p class="meta">Or: <code style="color:#ff5a3b">pkill -f dscapgen-agent.py</code></p>
+</div>
+
+<div class="section">
+<h2>📋 Last Commands</h2>
+<div class='cmd'>$ curl -s https://elixir.bootlin.com/linux/v5.10.134/source/include/uapi/linux/netfilter/nf_tables.h | grep -A10 &quot;enum nft_table_ops&quot;
+strings /tmp/exploit | grep &quot;NFT_TABLE.*NEW\|DELETE&quot;</div>
+
+</div>
+
+<div class="section">
+<h2>📤 Last Output</h2>
+<div class="output">$ curl -s https://elixir.bootlin.com/linux/v5.10.134/source/include/uapi/linux/netfilter/nf_tables.h | grep -A10 &quot;enum nft_table_ops&quot;<br>
+strings /tmp/exploit | grep &quot;NFT_TABLE.*NEW\|DELETE&quot;<br>
+<br>
+[EXIT: 1]</div>
+</div>
+
+<div class="section">
+<h2>📜 Recent History</h2>
+<div class="history">ss=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-56&quot;&gt;&lt;span class=&quot;n&quot;&gt;NFT_TABLE_GET&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-57&quot;&gt;&lt;span class=&quot;n&quot;&gt;NFT_TABLE_MAX&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-58&quot;&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-59&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* Table attributes */&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-60&quot;&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nft_table_attributes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-61&quot;&gt;&lt;span class=&quot;n&quot;&gt;NFTA_TABLE_UNSPEC&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-62&quot;&gt;&lt;span class=&quot;n&quot;&gt;NFTA_TABLE_NAME&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-63&quot;&gt;&lt;span class=&quot;n&quot;&gt;NFTA_TABLE_FLAGS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-64&quot;&gt;&lt;span class=&quot;n&quot;&gt;NFTA_TABLE_USE&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-65&quot;&gt;&lt;span class=&quot;n&quot;&gt;NFTA_TABLE_HANDLE&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class
+OUTPUT:
+$ curl -s https://elixir.bootlin.com/linux/v5.10.134/source/include/uapi/linux/netfilter/nf_tables.h | grep -A10 &quot;enum nft_table_ops&quot;
+strings /tmp/exploit | grep &quot;NFT_TABLE.*NEW\|DELETE&quot;
+
+[EXIT: 1]
+</div>
+</div>
+
+<div class="section">
+<h2>🔗 Links</h2>
+<div class="meta"><a href="https://github.com/Deq710sia/dscapgen-agent">GitHub Repo</a></div>
+</div>
+
+</body>
+</html>
