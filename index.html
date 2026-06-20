@@ -1,25 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="15">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="10">
 <title>Dscapgen Agent</title>
+<style>
+* { box-sizing: border-box; }
+body { background: #0a0e14; color: #e6e9ef; font-family: 'Courier New', monospace; margin: 0; padding: 20px; max-width: 900px; margin: 0 auto; }
+h1 { color: #7fd0ff; font-size: 1.4em; margin-bottom: 5px; }
+.status-badge { display: inline-block; padding: 8px 16px; border-radius: 5px; font-weight: bold; font-size: 1.1em; background: #3a3a1a; color: #ffcc3b; margin: 10px 0; }
+.meta { color: #666; font-size: 0.85em; margin: 3px 0; }
+.section { margin: 15px 0; padding: 12px; background: #0d1320; border: 1px solid #1a2235; border-radius: 5px; }
+.section h2 { color: #7fd0ff; font-size: 0.95em; margin: 0 0 8px 0; }
+.cmd { background: #111; padding: 4px 8px; margin: 2px 0; border-left: 3px solid #7fd0ff; font-size: 0.8em; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
+.output { background: #050; color: #7fdf5a; padding: 8px; font-size: 0.75em; overflow-x: auto; max-height: 350px; overflow-y: auto; border-radius: 3px; white-space: pre-wrap; word-wrap: break-word; }
+.history { font-size: 0.7em; color: #888; max-height: 250px; overflow-y: auto; white-space: pre-wrap; word-wrap: break-word; }
+.kill-btn { display: inline-block; background: #ff5a3b; color: #fff; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; font-weight: bold; text-decoration: none; margin: 10px 0; }
+.kill-btn:hover { background: #ff7a5b; }
+a { color: #7fd0ff; }
+</style>
 </head>
-<body style="background:#0a0e14;color:#e6e9ef;font-family:monospace;padding:20px">
-<h1 style="color:#7fd0ff">Dscapgen Agent</h1>
-<p style="color:#7fff5a;font-size:1.2em;font-weight:bold">RUNNING</p>
-<p>Turn: loading... | Auto-refresh: 15s</p>
-<p>Kernel: 5.10.134 | CVE: 2023-32233 | Target: nf_tables escape</p>
-<hr>
-<h2 style="color:#ff5a3b">KILL SWITCH</h2>
-<p>To kill the agent, ask any agent session to run:</p>
-<pre style="background:#111;padding:10px">touch /tmp/KILL_SWITCH</pre>
-<p>Or: <code>pkill -f dscapgen-agent.py</code></p>
-<hr>
-<h2>Status</h2>
-<p>Agent is restarting. Status will update shortly.</p>
-<hr>
-<p><a href="https://github.com/Deq710sia/dscapgen-agent" style="color:#7fd0ff">GitHub Repo</a></p>
+<body>
+
+<h1>▶ Dscapgen Agent</h1>
+<div class="status-badge">STARTING</div>
+<div class="meta">Turn: <b>11</b> | Updated: 20:12:49 UTC | Auto-refresh: 10s</div>
+<div class="meta">Kernel: 5.10.134 | CVE: 2023-32233 | Target: nf_tables escape</div>
+
+<div class="section">
+<h2>🔴 KILL SWITCH</h2>
+<p style="color: #ff5a3b; font-weight: bold;">⚠ This will immediately stop the agent.</p>
+<a href="https://github.com/Deq710sia/dscapgen-agent/new/main?filename=KILL&value=kill" class="kill-btn" target="_blank">⚠ KILL THE AGENT</a>
+<p class="meta">Or ask any agent session to run: <code style="color:#ff5a3b">touch /tmp/KILL_SWITCH</code></p>
+<p class="meta">Or: <code style="color:#ff5a3b">pkill -f dscapgen-agent.py</code></p>
+</div>
+
+<div class="section">
+<h2>📋 Last Commands</h2>
+<div class="cmd">No commands in last turn</div>
+</div>
+
+<div class="section">
+<h2>📤 Last Output</h2>
+<div class="output">Waiting...</div>
+</div>
+
+<div class="section">
+<h2>📜 Recent History</h2>
+<div class="history">ression netlink attributes&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1178&quot;&gt;&lt;span class=&quot;cm&quot;&gt; *&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1179&quot;&gt;&lt;span class=&quot;cm&quot;&gt; * @NFTA_LOG_GROUP: netlink group to send messages to (NLA_U32)&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1180&quot;&gt;&lt;span class=&quot;cm&quot;&gt; * @NFTA_LOG_PREFIX: prefix to prepend to log messages (NLA_STRING)&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1181&quot;&gt;&lt;span class=&quot;cm&quot;&gt; * @NFTA_LOG_SNAPLEN: length of payload to include in netlink message (NLA_U32)&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1182&quot;&gt;&lt;span class=&quot;cm&quot;&gt; * @NFTA_LOG_QTHRESHOLD: queue threshold (NLA_U32)&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1183&quot;&gt;&lt;span class=&quot;cm&quot;&gt; * @NFTA_LOG_LEVEL: log level (NLA_U32)&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1184&quot;&gt;&lt;span class=&quot;cm&quot;&gt; * @NFTA_LOG_FLAGS: logging flags (NLA_U32)&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1185&quot;&gt;&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1186&quot;&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;&lt;a class=&quot;ident&quot; href=&quot;/linux/v5.10.134/C/ident/nft_log_attributes&quot;&gt;nft_log_attributes&lt;/a&gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1187&quot;&gt;&lt;span class=&quot;w&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;&lt;a class=&quot;ident&quot; href=&quot;/linux/v5.10.134/C/ident/NFTA_LOG_UNSPEC&quot;&gt;NFTA_LOG_UNSPEC&lt;/a&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-1188&quot;&gt;&lt;span class=&quot;w&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;&lt;a class=&quot;ident&quot; href=&quot;/linux/v5.10.134/C/ident/NFTA_LOG_GROUP&quot;&gt;NFTA_LOG_GROUP&lt;/a&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id=&quot;codeline-118
+...[truncated]
+</div>
+</div>
+
+<div class="section">
+<h2>🔗 Links</h2>
+<div class="meta"><a href="https://github.com/Deq710sia/dscapgen-agent">GitHub Repo</a></div>
+</div>
+
 </body>
 </html>
